@@ -1,0 +1,9 @@
+1, vacuum sealed paprika,396.33,vegetables,Germany,2019-02-15 00:00:00,domestic dried,frozen
+2, frozen potatoes,290.54,vegetables,Spain,2020-12-03 00:00:00,vacuum sealed fruit,fresh
+3, dried paprika,898.57,pastry,Brazil,2018-09-06 00:00:00,vacuum sealed dried,vacuum sealed
+4, spicy beans,948.04,legumes,France,2018-02-07 00:00:00,domestic legumes,spicy
+5,imported lentils,760.73,processed food,Germany,2020-06-19 00:00:00,frozen processed food,vacuum sealed
+6,vacuum sealed beef,803.19,vegetables,Poland,2019-02-07 00:00:00,domestic meat,frozen
+7,fresh tomato,141.78,processed food,Morocco,2020-12-07 00:00:00,dried processed food,smoked
+8,vacuum sealed chicken,373.48,canned,Spain,2019-08-08 00:00:00,vacuum sealed pastry,vacuum sealed
+9,vacuum sealed beef,856.78,dried,Morocco,2019-09-07 00:00:00,frozen dried,dried
