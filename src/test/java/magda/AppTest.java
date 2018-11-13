@@ -28,6 +28,11 @@ public class AppTest
         Product productFromDB = null;
         productFromDB = productDAO.readProductById(id);               //test metody readProductbyId dla id istniejacego obiektu
         assertNotNull(productFromDB);
+        assertEquals(productFromDB.getName(), "testName");
+
+        productDAO.updateProductById(id, "alteredTestName", new BigDecimal(2));
+        productFromDB = productDAO.readProductById(id);
+        assertEquals(productFromDB.getName(), "alteredTestName");
 
         productFromDB = productDAO.readProductById(-1);     //test metody readProductbyId dla id nieistniejacego obiektu
         assertNull(productFromDB);
