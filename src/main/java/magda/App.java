@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Hello world!
- */
 public class App {
     public static void main(String[] args) {
         ProductDAOImpl productDAO = new ProductDAOImpl();
@@ -14,22 +11,20 @@ public class App {
         //List<Product> products = productDAO.importProductFromFile("C:\\Users\\Karol\\IdeaProjects\\TestowanieOprogramowania1\\TestowanieOprogramowania\\src\\main\\resources\\dane.txt");
         ProductService productService = new ProductServiceImpl();
         ProductServiceImpl productServiceImpl = new ProductServiceImpl();
-        productServiceImpl.enterDataTODataBase(); // czyta z pliku i zapisuje do bazy
+        //productServiceImpl.enterDataTODataBase(); // czyta z pliku i zapisuje do bazy
 
-       createProduct(productService);
-
+        createProduct(productService);
         getProductbyId(productService);
         updateProductById(productService);
-       deleteProductById(productService);
+        deleteProductById(productService);
     }
 
-
-    private static void createProduct(ProductService productServcice) {
-        productServcice.addProduct(getProduct());
+    private static void createProduct(ProductService productService) {
+        productService.addProduct(getProduct());
     }
 
-    private static void deleteProductById(ProductService productServcice) {
-        productServcice.deleteProductById(2);
+    private static void deleteProductById(ProductService productService) {
+        productService.deleteProductById(2);
     }
 
     private static void updateProductById(ProductService productService) {
@@ -37,7 +32,7 @@ public class App {
     }
 
     private static void getProductbyId(ProductService productService) {
-        Product product = productService.getProductbyId(1);
+        Product product = productService.getProductById(1);
         System.out.println(product);
     }
 
@@ -52,7 +47,6 @@ public class App {
         product.setDescription("frozen");
         return product;
     }
-
 }
 
 

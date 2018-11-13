@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 // LOMBOK
 @Data
@@ -28,6 +27,16 @@ public class Product {
     private LocalDate expiration_date;
     private String searchTags;
     private String description;
+
+    public Product(String name, BigDecimal price, String category, String countryOrigin, LocalDate expiration_date, String searchTags, String description) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.countryOrigin = countryOrigin;
+        this.expiration_date = expiration_date;
+        this.searchTags = searchTags;
+        this.description = description;
+    }
 
     public Integer getId() {
         return id;

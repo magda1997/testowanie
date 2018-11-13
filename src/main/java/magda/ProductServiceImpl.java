@@ -22,14 +22,14 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = new ArrayList<>();
         while (sc.hasNextLine()) {
             String data[] = sc.nextLine().split(",");
-            Product product = new Product(Integer.parseInt(data[0]),data[1],new BigDecimal(data[2]), data[3],data[4], LocalDate.parse(data[5], DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),data[6],data[7]);
+            Product product = new Product(Integer.parseInt(data[0]), data[1], new BigDecimal(data[2]), data[3],data[4], LocalDate.parse(data[5], DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), data[6], data[7]);
             products.add(product);
         }
         return products;
     }
 
     public void enterDataTODataBase(){
-        List<Product> products = importProductFromFile("C:\\Users\\Karol\\IdeaProjects\\TestowanieOprogramowania\\src\\main\\resources\\dane.txt");
+        List<Product> products = importProductFromFile("E:\\studia\\sem7\\Testowanie Oprogramowania\\projekty\\testowanie\\src\\main\\resources\\dane.txt");
         ProductService productService = new ProductServiceImpl();
         System.out.println("list="+ products);
         for (int i = 0; i < products.size(); i++) {
@@ -43,8 +43,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductbyId(int productId) {
-        return new ProductDAOImpl().readProductbyId(productId);
+    public Product getProductById(int productId) {
+        return new ProductDAOImpl().readProductById(productId);
     }
 
     @Override

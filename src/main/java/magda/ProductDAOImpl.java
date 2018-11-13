@@ -25,23 +25,25 @@ public class ProductDAOImpl implements ProductDAO {
 
 
     @Override
-    public void createProduct(Product product) {
-
+    public int createProduct(Product product) {
+        if(product == null)
+            return -1;
         try (Session session = Connection.getSessionFactory().openSession()) {
             session.beginTransaction();
             Integer id = (Integer) session.save(product);
             System.out.println("Product is created  with Id::" + id);
             session.getTransaction().commit();
+            return id;
         } catch (HibernateException e) {
             e.printStackTrace();
         }
+        return -1;
     }
 
     @Override
-    public Product readProductbyId(int productId) {
-        Product product = null;
+    public Product readProductById(int productId) {
+        Product product;
         try (Session session = Connection.getSessionFactory().openSession()) {
-
             product = session.get(Product.class, productId);
             if (product != null) {
                 return product;
@@ -57,7 +59,6 @@ public class ProductDAOImpl implements ProductDAO {
     @Override
     public void updateProductById(int employeeId, String name, BigDecimal price) {
         try (Session session = Connection.getSessionFactory().openSession()) {
-
             Product product = session.get(Product.class, employeeId);
             if (product != null) {
                 product.setName(name);
@@ -68,7 +69,6 @@ public class ProductDAOImpl implements ProductDAO {
             } else {
                 System.out.println("Product doesn't exist with provideded Id..");
             }
-
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -76,21 +76,18 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public void deleteProductById(Integer productId) {
-
         try (Session session = Connection.getSessionFactory().openSession()) {
             Product pr = session.get(Product.class, productId);
             if (pr != null) {
                 session.beginTransaction();
-
                 session.delete(pr);
                 session.getTransaction().commit();
             } else {
-                System.out.println("Product doesn't exist with provideded Id..");
+                System.out.println("Product doesn't exist with provided Id..");
             }
         } catch (HibernateException e) {
             e.printStackTrace();
         }
-
     }
 
 }

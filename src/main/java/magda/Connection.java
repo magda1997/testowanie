@@ -1,23 +1,15 @@
 package magda;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.engine.spi.SessionImplementor;
-import org.postgresql.copy.CopyManager;
-import org.postgresql.core.BaseConnection;
 
-import java.io.File;
-import java.io.FileReader;
 
 public class Connection {
-
     private static StandardServiceRegistry standardServiceRegistry;
     private static SessionFactory sessionFactory;
-
 
     static{
         if (sessionFactory == null) {
