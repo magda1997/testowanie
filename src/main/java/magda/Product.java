@@ -29,6 +29,16 @@ public class Product {
     private String searchTags;
     private String description;
 
+    public Product(String name, BigDecimal price, String category, String country, LocalDate expiration_date, String searchTags, String description) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.countryOrigin = country;
+        this.expiration_date = expiration_date;
+        this.searchTags = searchTags;
+        this.description = description;
+    }
+
     public Integer getId() {
         return id;
     }

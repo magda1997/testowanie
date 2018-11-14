@@ -5,8 +5,8 @@ package magda;
 public interface ProductDAO {
     // tu jest crud add= cereate
     //
-    public abstract void createProduct(Product product);
-    public abstract Product readProductbyId(int productId);
-    public abstract void updateProductById(int productId, String name, BigDecimal price);
-    public abstract void  deleteProductById(Integer productId);
+    Integer createProduct(Product product);
+    Product readProductById(int productId);
+    void updateProductById(int productId, String name, BigDecimal price);
+    void  deleteProductById(Integer productId);
 }
