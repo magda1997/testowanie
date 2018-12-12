@@ -10,17 +10,17 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         ProductDAOImpl productDAO = new ProductDAOImpl();
-        //    productDAO.importProductFromFile("C:\\Users\\Karol\\IdeaProjects\\TestowanieOprogramowania1\\TestowanieOprogramowania\\src\\main\\resources\\dane.txt");
+        //   productDAO.importProductFromFile("C:\\Users\\Karol\\IdeaProjects\\TestowanieOprogramowania1\\TestowanieOprogramowania\\src\\main\\resources\\dane.txt");
         //List<Product> products = productDAO.importProductFromFile("C:\\Users\\Karol\\IdeaProjects\\TestowanieOprogramowania1\\TestowanieOprogramowania\\src\\main\\resources\\dane.txt");
         ProductService productService = new ProductServiceImpl();
         ProductServiceImpl productServiceImpl = new ProductServiceImpl();
         productServiceImpl.enterDataTODataBase(); // czyta z pliku i zapisuje do bazy
 
-       createProduct(productService);
-
+        createProduct(productService);
         getProductbyId(productService);
         updateProductById(productService);
-       deleteProductById(productService);
+
+        //deleteProductById(productService);
     }
 
 
@@ -28,10 +28,13 @@ public class App {
         productServcice.addProduct(ProductUtils.getProduct());
     }
 
-    private static void deleteProductById(ProductService productServcice) {
-        productServcice.deleteProductById(2);
-    }
+//    private static void deleteProductById(ProductService productServcice) {
+//        productServcice.deleteProductById(2);
+//    }
 
+    //    private static void deleteProductById(ProductService productServcice) {
+//        productServcice.deleteProductById(2);
+//    }
     private static void updateProductById(ProductService productService) {
         productService.updateProductById(10, "broccoli", new BigDecimal(1.3));
     }
